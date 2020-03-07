@@ -27,7 +27,9 @@ if (mysqli_num_rows($result) > 0) {
         <tr>
             <td><?= $num++ ?></td>
             <td><?= $row['unit_name'] ?></td>
-            <td><a href="update.php?id=<?= $row['unit_id'] ?>">Update</a></td>
+            <td>
+                <button class="btn btn-warning"><a href="update.php?id=<?= $row['unit_id'] ?>">Update</a></button>
+            </td>
             <td><a href="soft_delete.php?id=<?= $row['unit_id'] ?>">Soft Delete</a></td>
 
         <tr>
@@ -35,6 +37,7 @@ if (mysqli_num_rows($result) > 0) {
             }
             ?>
     </table>
+<button><a href="recycle_bin.php">Recycle_bin</a></button>
     <?php
 } else {
     die('Query failed' . mysqli_error($conn));
